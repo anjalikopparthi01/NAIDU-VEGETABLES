@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Analog Clock - Display current time in multiple time zones with beautiful analog clocks">
+    <title>Analog Clock | Multi-Timezone</title>
+    <link rel="stylesheet" href="styles/analog-clock.css">
+</head>
+<body>
+    <div class="analog-container">
+        <!-- Header -->
+        <header class="analog-header">
+            <h1>⏱️ Analog Clocks</h1>
+            <p>Beautiful analog clocks displaying time across the globe</p>
+        </header>
+
+        <!-- Controls -->
+        <div class="analog-controls">
+            <button class="toggle-btn" id="toggle-view-btn">🔢 Switch to Digital</button>
+        </div>
+
+        <!-- Analog Clocks Grid -->
+        <div id="analog-clocks-grid">
+            <!-- New York -->
+            <div class="analog-clock-card">
+                <div class="clock-timezone-name">🗽 New York</div>
+                <div class="clock-offset">UTC-5</div>
+                <div class="canvas-container">
+                    <canvas id="canvas-newyork"></canvas>
+                </div>
+                <div class="digital-info" id="digital-newyork"></div>
+            </div>
+
+            <!-- Los Angeles -->
+            <div class="analog-clock-card">
+                <div class="clock-timezone-name">🌴 Los Angeles</div>
+                <div class="clock-offset">UTC-8</div>
+                <div class="canvas-container">
+                    <canvas id="canvas-losangeles"></canvas>
+                </div>
+                <div class="digital-info" id="digital-losangeles"></div>
+            </div>
+
+            <!-- London -->
+            <div class="analog-clock-card">
+                <div class="clock-timezone-name">🇬🇧 London</div>
+                <div class="clock-offset">UTC+0</div>
+                <div class="canvas-container">
+                    <canvas id="canvas-london"></canvas>
+                </div>
+                <div class="digital-info" id="digital-london"></div>
+            </div>
+
+            <!-- Paris -->
+            <div class="analog-clock-card">
+                <div class="clock-timezone-name">🇫🇷 Paris</div>
+                <div class="clock-offset">UTC+1</div>
+                <div class="canvas-container">
+                    <canvas id="canvas-paris"></canvas>
+                </div>
+                <div class="digital-info" id="digital-paris"></div>
+            </div>
+
+            <!-- Dubai -->
+            <div class="analog-clock-card">
+                <div class="clock-timezone-name">🇦🇪 Dubai</div>
+                <div class="clock-offset">UTC+4</div>
+                <div class="canvas-container">
+                    <canvas id="canvas-dubai"></canvas>
+                </div>
+                <div class="digital-info" id="digital-dubai"></div>
+            </div>
+
+            <!-- India -->
+            <div class="analog-clock-card">
+                <div class="clock-timezone-name">🇮🇳 India</div>
+                <div class="clock-offset">UTC+5:30</div>
+                <div class="canvas-container">
+                    <canvas id="canvas-india"></canvas>
+                </div>
+                <div class="digital-info" id="digital-india"></div>
+            </div>
+
+            <!-- Bangkok -->
+            <div class="analog-clock-card">
+                <div class="clock-timezone-name">🇹🇭 Bangkok</div>
+                <div class="clock-offset">UTC+7</div>
+                <div class="canvas-container">
+                    <canvas id="canvas-bangkok"></canvas>
+                </div>
+                <div class="digital-info" id="digital-bangkok"></div>
+            </div>
+
+            <!-- Hong Kong -->
+            <div class="analog-clock-card">
+                <div class="clock-timezone-name">🇭🇰 Hong Kong</div>
+                <div class="clock-offset">UTC+8</div>
+                <div class="canvas-container">
+                    <canvas id="canvas-hongkong"></canvas>
+                </div>
+                <div class="digital-info" id="digital-hongkong"></div>
+            </div>
+
+            <!-- Tokyo -->
+            <div class="analog-clock-card">
+                <div class="clock-timezone-name">🇯🇵 Tokyo</div>
+                <div class="clock-offset">UTC+9</div>
+                <div class="canvas-container">
+                    <canvas id="canvas-tokyo"></canvas>
+                </div>
+                <div class="digital-info" id="digital-tokyo"></div>
+            </div>
+
+            <!-- Sydney -->
+            <div class="analog-clock-card">
+                <div class="clock-timezone-name">🇦🇺 Sydney</div>
+                <div class="clock-offset">UTC+10</div>
+                <div class="canvas-container">
+                    <canvas id="canvas-sydney"></canvas>
+                </div>
+                <div class="digital-info" id="digital-sydney"></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="analog-footer">
+            <p>✨ Beautiful analog clocks with real-time updates</p>
+            <p>💡 Tip: Click the button above to toggle between analog and digital view</p>
+        </footer>
+    </div>
+
+    <script src="scripts/analog-clock.js"></script>
+</body>
+</html>
