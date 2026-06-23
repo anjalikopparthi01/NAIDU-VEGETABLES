@@ -1,0 +1,291 @@
+/* Dark Mode Stylesheet for Clocks */
+
+:root {
+    /* Light Mode Colors */
+    --light-primary-color: #1e40af;
+    --light-secondary-color: #1e3a8a;
+    --light-accent-color: #3b82f6;
+    --light-success-color: #10b981;
+    --light-warning-color: #f59e0b;
+    --light-danger-color: #ef4444;
+    --light-bg: #f0f9ff;
+    --light-border-color: #e0e7ff;
+    --light-text-color: #1f2937;
+    --light-text-light: #6b7280;
+    --light-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --light-shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+
+    /* Dark Mode Colors */
+    --dark-primary-color: #60a5fa;
+    --dark-secondary-color: #93c5fd;
+    --dark-accent-color: #3b82f6;
+    --dark-success-color: #10b981;
+    --dark-warning-color: #fbbf24;
+    --dark-danger-color: #ef4444;
+    --dark-bg: #0f172a;
+    --dark-bg-secondary: #1e293b;
+    --dark-bg-tertiary: #334155;
+    --dark-border-color: #475569;
+    --dark-text-color: #e2e8f0;
+    --dark-text-light: #94a3b8;
+    --dark-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    --dark-shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.7);
+
+    /* Default to Light Mode */
+    --primary-color: var(--light-primary-color);
+    --secondary-color: var(--light-secondary-color);
+    --accent-color: var(--light-accent-color);
+    --success-color: var(--light-success-color);
+    --warning-color: var(--light-warning-color);
+    --danger-color: var(--light-danger-color);
+    --bg: var(--light-bg);
+    --bg-secondary: white;
+    --bg-tertiary: #f3f4f6;
+    --border-color: var(--light-border-color);
+    --text-color: var(--light-text-color);
+    --text-light: var(--light-text-light);
+    --shadow: var(--light-shadow);
+    --shadow-lg: var(--light-shadow-lg);
+}
+
+/* Dark Mode Toggle */
+body.dark-mode {
+    --primary-color: var(--dark-primary-color);
+    --secondary-color: var(--dark-secondary-color);
+    --accent-color: var(--dark-accent-color);
+    --success-color: var(--dark-success-color);
+    --warning-color: var(--dark-warning-color);
+    --danger-color: var(--dark-danger-color);
+    --bg: var(--dark-bg);
+    --bg-secondary: var(--dark-bg-secondary);
+    --bg-tertiary: var(--dark-bg-tertiary);
+    --border-color: var(--dark-border-color);
+    --text-color: var(--dark-text-color);
+    --text-light: var(--dark-text-light);
+    --shadow: var(--dark-shadow);
+    --shadow-lg: var(--dark-shadow-lg);
+}
+
+/* Apply Variables to Clock Styles */
+body {
+    background: var(--bg);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.clock-container,
+.analog-container {
+    color: var(--text-color);
+}
+
+.clock-header,
+.analog-header {
+    color: var(--text-color);
+}
+
+.clock-card,
+.analog-clock-card {
+    background: var(--bg-secondary);
+    box-shadow: var(--shadow);
+    border-color: var(--border-color);
+}
+
+.clock-card:hover,
+.analog-clock-card:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-color);
+}
+
+.timezone-name,
+.clock-timezone-name {
+    color: var(--primary-color);
+}
+
+.timezone-offset,
+.clock-offset {
+    color: var(--text-light);
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+.digital-display {
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+    color: var(--success-color);
+    border-color: var(--border-color);
+}
+
+.date {
+    color: var(--text-light);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    color: white;
+}
+
+.btn-secondary {
+    background: var(--bg-secondary);
+    color: var(--primary-color);
+    border: 2px solid var(--accent-color);
+}
+
+.btn-secondary:hover {
+    background: var(--bg-tertiary);
+}
+
+.clock-footer,
+.analog-footer {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+/* Canvas Container Dark Mode */
+body.dark-mode .canvas-container {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+}
+
+/* Digital Info Dark Mode */
+.digital-info {
+    background: var(--bg-tertiary);
+    color: var(--text-color);
+}
+
+body.dark-mode .digital-info {
+    border: 1px solid var(--border-color);
+}
+
+/* Toggle Button */
+.theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 2px solid var(--accent-color);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Theme Toggle Animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.theme-toggle.switching {
+    animation: rotate 0.6s ease-in-out;
+}
+
+/* Controls Dark Mode */
+.controls,
+.analog-controls {
+    color: var(--text-color);
+}
+
+.toggle-btn {
+    background: var(--bg-secondary);
+    color: var(--primary-color);
+    border: 2px solid var(--accent-color);
+    box-shadow: var(--shadow);
+}
+
+.toggle-btn:hover {
+    box-shadow: var(--shadow-lg);
+    background: var(--bg-tertiary);
+}
+
+/* Dark Mode for Digital Clock */
+body.dark-mode .digital-display {
+    background: linear-gradient(135deg, #0a0e27 0%, #16213e 100%);
+    color: #4ade80;
+    border: 1px solid var(--border-color);
+}
+
+/* Dark Mode for Analog Clock Digital Display */
+body.dark-mode #analog-clocks-grid.digital-view .analog-clock-card {
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    color: var(--text-color);
+}
+
+body.dark-mode #analog-clocks-grid.digital-view .time-display {
+    color: var(--accent-color);
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+body.dark-mode #analog-clocks-grid.digital-view .period-display {
+    color: var(--primary-color);
+}
+
+body.dark-mode #analog-clocks-grid.digital-view .date-display {
+    color: var(--text-light);
+}
+
+/* Feature: Smooth Transition for All Elements */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Prevent Transition on Load */
+body.no-transition * {
+    transition: none !important;
+}
+
+/* Responsive Theme Toggle */
+@media (max-width: 768px) {
+    .theme-toggle {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-toggle {
+        bottom: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+}
+
+/* Print Styles - Force Light Mode for Printing */
+@media print {
+    body {
+        --bg: white;
+        --bg-secondary: white;
+        --bg-tertiary: #f3f4f6;
+        --text-color: #1f2937;
+        --text-light: #6b7280;
+    }
+
+    .theme-toggle {
+        display: none;
+    }
+}
