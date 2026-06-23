@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Digital Clock - Display current time in multiple time zones">
+    <title>Digital Clock | Multi-Timezone</title>
+    <link rel="stylesheet" href="styles/clock.css">
+</head>
+<body>
+    <div class="clock-container">
+        <!-- Header -->
+        <header class="clock-header">
+            <h1>⏰ Global Time</h1>
+            <p class="subtitle">Current time in different time zones</p>
+        </header>
+
+        <!-- Clock Grid -->
+        <div class="clocks-grid">
+            <!-- New York -->
+            <div class="clock-card">
+                <div class="timezone-name">New York</div>
+                <div class="timezone-offset">UTC-5</div>
+                <div class="digital-display">
+                    <span class="time" id="time-newyork">00:00:00</span>
+                    <span class="period" id="period-newyork">AM</span>
+                </div>
+                <div class="date" id="date-newyork">---</div>
+            </div>
+
+            <!-- London -->
+            <div class="clock-card">
+                <div class="timezone-name">London</div>
+                <div class="timezone-offset">UTC+0</div>
+                <div class="digital-display">
+                    <span class="time" id="time-london">00:00:00</span>
+                    <span class="period" id="period-london">AM</span>
+                </div>
+                <div class="date" id="date-london">---</div>
+            </div>
+
+            <!-- Paris -->
+            <div class="clock-card">
+                <div class="timezone-name">Paris</div>
+                <div class="timezone-offset">UTC+1</div>
+                <div class="digital-display">
+                    <span class="time" id="time-paris">00:00:00</span>
+                    <span class="period" id="period-paris">AM</span>
+                </div>
+                <div class="date" id="date-paris">---</div>
+            </div>
+
+            <!-- Dubai -->
+            <div class="clock-card">
+                <div class="timezone-name">Dubai</div>
+                <div class="timezone-offset">UTC+4</div>
+                <div class="digital-display">
+                    <span class="time" id="time-dubai">00:00:00</span>
+                    <span class="period" id="period-dubai">AM</span>
+                </div>
+                <div class="date" id="date-dubai">---</div>
+            </div>
+
+            <!-- India (IST) -->
+            <div class="clock-card">
+                <div class="timezone-name">India</div>
+                <div class="timezone-offset">UTC+5:30</div>
+                <div class="digital-display">
+                    <span class="time" id="time-india">00:00:00</span>
+                    <span class="period" id="period-india">AM</span>
+                </div>
+                <div class="date" id="date-india">---</div>
+            </div>
+
+            <!-- Bangkok -->
+            <div class="clock-card">
+                <div class="timezone-name">Bangkok</div>
+                <div class="timezone-offset">UTC+7</div>
+                <div class="digital-display">
+                    <span class="time" id="time-bangkok">00:00:00</span>
+                    <span class="period" id="period-bangkok">AM</span>
+                </div>
+                <div class="date" id="date-bangkok">---</div>
+            </div>
+
+            <!-- Hong Kong -->
+            <div class="clock-card">
+                <div class="timezone-name">Hong Kong</div>
+                <div class="timezone-offset">UTC+8</div>
+                <div class="digital-display">
+                    <span class="time" id="time-hongkong">00:00:00</span>
+                    <span class="period" id="period-hongkong">AM</span>
+                </div>
+                <div class="date" id="date-hongkong">---</div>
+            </div>
+
+            <!-- Sydney -->
+            <div class="clock-card">
+                <div class="timezone-name">Sydney</div>
+                <div class="timezone-offset">UTC+10</div>
+                <div class="digital-display">
+                    <span class="time" id="time-sydney">00:00:00</span>
+                    <span class="period" id="period-sydney">AM</span>
+                </div>
+                <div class="date" id="date-sydney">---</div>
+            </div>
+
+            <!-- Tokyo -->
+            <div class="clock-card">
+                <div class="timezone-name">Tokyo</div>
+                <div class="timezone-offset">UTC+9</div>
+                <div class="digital-display">
+                    <span class="time" id="time-tokyo">00:00:00</span>
+                    <span class="period" id="period-tokyo">AM</span>
+                </div>
+                <div class="date" id="date-tokyo">---</div>
+            </div>
+
+            <!-- Los Angeles -->
+            <div class="clock-card">
+                <div class="timezone-name">Los Angeles</div>
+                <div class="timezone-offset">UTC-8</div>
+                <div class="digital-display">
+                    <span class="time" id="time-losangeles">00:00:00</span>
+                    <span class="period" id="period-losangeles">AM</span>
+                </div>
+                <div class="date" id="date-losangeles">---</div>
+            </div>
+
+            <!-- Singapore -->
+            <div class="clock-card">
+                <div class="timezone-name">Singapore</div>
+                <div class="timezone-offset">UTC+8</div>
+                <div class="digital-display">
+                    <span class="time" id="time-singapore">00:00:00</span>
+                    <span class="period" id="period-singapore">AM</span>
+                </div>
+                <div class="date" id="date-singapore">---</div>
+            </div>
+
+            <!-- Moscow -->
+            <div class="clock-card">
+                <div class="timezone-name">Moscow</div>
+                <div class="timezone-offset">UTC+3</div>
+                <div class="digital-display">
+                    <span class="time" id="time-moscow">00:00:00</span>
+                    <span class="period" id="period-moscow">AM</span>
+                </div>
+                <div class="date" id="date-moscow">---</div>
+            </div>
+
+            <!-- Toronto -->
+            <div class="clock-card">
+                <div class="timezone-name">Toronto</div>
+                <div class="timezone-offset">UTC-5</div>
+                <div class="digital-display">
+                    <span class="time" id="time-toronto">00:00:00</span>
+                    <span class="period" id="period-toronto">AM</span>
+                </div>
+                <div class="date" id="date-toronto">---</div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button class="btn btn-primary" id="current-time-btn">Show Current Time</button>
+            <button class="btn btn-secondary" id="add-timezone-btn">Add Timezone</button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="clock-footer">
+            <p>All times update in real-time • Last updated: <span id="last-update">---</span></p>
+        </footer>
+    </div>
+
+    <script src="scripts/clock.js"></script>
+</body>
+</html>
